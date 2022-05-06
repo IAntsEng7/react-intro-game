@@ -3,8 +3,20 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 
 class Square extends React.Component {
+  // 初始化 state
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: null,
+    };
+  }
+
   render() {
-    return <button className="square">{this.props.value}</button>; // {this.props.value}，以顯示 value 的值
+    return (
+      <button className="square" onClick={() => this.setState({ value: "X" })}>
+        {this.state.value}
+      </button>
+    );
   }
 }
 

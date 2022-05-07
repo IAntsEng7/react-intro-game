@@ -2,22 +2,31 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-class Square extends React.Component {
-  // 初始化 state
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: null,
-    };
-  }
+// class Square extends React.Component {
+//   // 初始化 state
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       value: null,
+//     };
+//   }
 
-  render() {
-    return (
-      <button className="square" onClick={() => this.props.onClick()}>
-        {this.props.value}
-      </button>
-    );
-  }
+//   render() {
+//     return (
+//       <button className="square" onClick={() => this.props.onClick()}>
+//         {this.props.value}
+//       </button>
+//     );
+//   }
+// }
+
+// 改寫 Square 成 function component
+function Square(props) {
+  return (
+    <button className="square" onClick={props.onClick}>
+      {props.value}
+    </button>
+  );
 }
 
 class Board extends React.Component {
